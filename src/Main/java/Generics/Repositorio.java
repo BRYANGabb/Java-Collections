@@ -34,6 +34,19 @@ public class Repositorio <T> {
         return "\nItem=" + item;
     }
 
+    public static void main(String[] args) {
+
+        Repositorio <String> nomes = new Repositorio<>();
+
+        nomes.adicionarItem("A");
+        nomes.adicionarItem("B");
+        nomes.adicionarItem("C");
+        nomes.adicionarItem("E");
+        nomes.adicionarItem("F");
+        nomes.listarItens();
+        nomes.buscarIndice(2);
+    }
+
 }
 
 

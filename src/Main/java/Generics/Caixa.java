@@ -27,4 +27,13 @@ public class Caixa <T>{
             System.out.println(i);
         }
     }
+
+    public static void main(String[] args) {
+        Caixa <Integer> caixaInt= new Caixa<>();
+        Caixa <String> caixaString= new Caixa<>();
+        caixaInt.guardarItem(20);
+        caixaString.guardarItem("Bryan");
+        caixaInt.revelar();
+        caixaString.revelar();
+    }
 }

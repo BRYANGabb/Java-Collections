@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class Aluno implements Comparable <Aluno>{
     private String nome;
@@ -43,9 +46,31 @@ public class Aluno implements Comparable <Aluno>{
                 ", nota=" + nota +
                 '}';
     }
+
+    public static void main(String[] args) {
+        List<Aluno> alunos = new ArrayList<>();
+        alunos.add(new Aluno("Bryan", 7.8f));
+        alunos.add(new Aluno("Bryan", 8f));
+        alunos.add(new Aluno("Bryan", 3f));
+        alunos.add(new Aluno("A", 4f));
+        alunos.add(new Aluno("Mirella", 10f));
+        alunos.add(new Aluno("d", 3.44f));
+        /*Collections.sort(alunos);
+        for (Aluno aluno : alunos){
+            System.out.println(aluno.toString());
+        }*/
+        /*Collections.sort(alunos, new OrdenarNome());
+        for (Aluno aluno : alunos){
+            System.out.println(aluno.toString());
+        }*/
+        Collections.sort(alunos, new OrdenarMenorNotaNome());
+        for (Aluno aluno: alunos){
+            System.out.println(aluno.toString());
+        }
+    }
 }
 
-class OrdenarNome implements Comparator <Aluno>{
+class OrdenarNomeAluno implements Comparator <Aluno>{
 
     @Override
     public int compare(Aluno aluno1, Aluno aluno2) {
