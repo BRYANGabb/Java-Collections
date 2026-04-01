@@ -1,5 +1,7 @@
 package Main.java.Set.OperacoesBasicas.ConjuntoDeConvidados;
 
+import java.util.Objects;
+
 public class Convidado {
     private String nome;
     private int codigoConvidado;
@@ -23,6 +25,18 @@ public class Convidado {
 
     private void setCodigoConvidado(int codigoConvidado) {
         this.codigoConvidado = codigoConvidado;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Convidado convidado = (Convidado) o;
+        return codigoConvidado == convidado.codigoConvidado;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(codigoConvidado);
     }
 
     @Override

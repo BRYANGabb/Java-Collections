@@ -1,6 +1,7 @@
 package Main.java.Set.OperacoesBasicas.ConjuntoDePalavrasUnicas;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class ConjuntoPalavrasUnicas {
@@ -42,13 +43,25 @@ public class ConjuntoPalavrasUnicas {
         System.out.println(this.palavrasUnicas);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ConjuntoPalavrasUnicas that = (ConjuntoPalavrasUnicas) o;
+        return Objects.equals(palavrasUnicas, that.palavrasUnicas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(palavrasUnicas);
+    }
+
     public static void main(String[] args) {
 
         ConjuntoPalavrasUnicas palavrasUnicas = new ConjuntoPalavrasUnicas();
 
         palavrasUnicas.adicionarPalavra("Agua");
         palavrasUnicas.adicionarPalavra("Uva");
-        palavrasUnicas.adicionarPalavra("Cafe");
+        palavrasUnicas.adicionarPalavra("Arroz");
         palavrasUnicas.adicionarPalavra("Banana");
         palavrasUnicas.adicionarPalavra("Arroz");
         palavrasUnicas.adicionarPalavra("Carne");

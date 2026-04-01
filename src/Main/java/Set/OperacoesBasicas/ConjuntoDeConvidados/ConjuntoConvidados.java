@@ -35,8 +35,8 @@ public class ConjuntoConvidados {
         this.convidadoSet.remove(removerConvidado);
     }
 
-    public void contarConvidados(){
-        System.out.println(this.convidadoSet.size());
+    public int contarConvidados(){
+        return this.convidadoSet.size();
     }
 
     public void exibirConvidados(){
@@ -48,15 +48,14 @@ public class ConjuntoConvidados {
         ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();
 
         conjuntoConvidados.adicionarConvidado("Convidado 1", 355);
-        conjuntoConvidados.adicionarConvidado("Convidado 1", 35);
+        conjuntoConvidados.adicionarConvidado("Convidado 6", 355);
         conjuntoConvidados.adicionarConvidado("Convidado 2", 13);
         conjuntoConvidados.adicionarConvidado("Convidado 3", 77);
         conjuntoConvidados.adicionarConvidado("Convidado 5", 1);
 
         conjuntoConvidados.removerConvidadoPorCodigoConvite(13);
 
-        conjuntoConvidados.contarConvidados();
-
+        System.out.println("Existem " + conjuntoConvidados.contarConvidados());
         conjuntoConvidados.exibirConvidados();
     }
 }
